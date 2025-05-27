@@ -48,7 +48,7 @@ public class ChestNutGenerator : MonoBehaviour
                 if (currentPower >= maxPower)
                 {
                     currentPower = maxPower;
-                    isPowerIncreasing = false; // 최대치 도달하면 감소로 전환
+                    isPowerIncreasing = false; // 최대치 도달시 감소로 전환
                 }
             }
             else
@@ -57,7 +57,7 @@ public class ChestNutGenerator : MonoBehaviour
                 if (currentPower <= minPower)
                 {
                     currentPower = minPower;
-                    isPowerIncreasing = true; // 최소치 도달하면 증가로 전환
+                    isPowerIncreasing = true; // 최소치 도달시 증가로 전환
                 }
             }
 
