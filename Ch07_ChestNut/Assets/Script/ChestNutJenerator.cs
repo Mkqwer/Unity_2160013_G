@@ -1,19 +1,19 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class ChestNutJenerator : MonoBehaviour
 {
 
     public GameObject bamsongiPrefab;
-    
+
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !GameManager.instance.isShoot && GameManager.instance.isLive)
         {
             Camera cam = Camera.main;
-            Vector3 spawnPos = cam.transform.position + cam.transform.forward * 1.0f; // Ä«¸Þ¶ó ¾Õ 1¸¸Å­
+            Vector3 spawnPos = cam.transform.position + cam.transform.forward * 1.0f; // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ 1ï¿½ï¿½Å­
 
             GameObject bamsongi = Instantiate(bamsongiPrefab, spawnPos, Quaternion.identity);
 
@@ -21,8 +21,9 @@ public class ChestNutJenerator : MonoBehaviour
             Vector3 worldDir = ray.direction;
 
             bamsongi.GetComponent<ChestNutBehavior>().Shoot(worldDir.normalized * 2000);
+            GameManager.instance.throwChestNutNum--;
         }
 
     }
-    
+
 }

@@ -14,21 +14,14 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    public void GameClear()
-    {
-        SceneManager.LoadScene("ClearScene");
-    }
-
     public void Tutorial()
     {
         SceneManager.LoadScene("TutorialScene");
     }
 
-    public void GameOver()
+    public void CountScene()
     {
-        SceneManager.LoadScene("OverScene");
+        SceneManager.LoadScene("CountScene");
     }
-
-   
 
 }
