@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
-    public enum InfoType { Score, Count, Power, GameOver }
+    public enum InfoType { Score, Count, GameOver }
     public InfoType type;
 
     public TMP_InputField countInputField; // InputField ¿¬°á
@@ -55,9 +55,7 @@ public class UiManager : MonoBehaviour
                 }
 
                 break;
-            case InfoType.Power:
 
-                break;
             case InfoType.GameOver:
 
                 myText.text = string.Format("Final Score : {0:F0}", GameManager.instance.score * 10);

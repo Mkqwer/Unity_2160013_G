@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //게에 사용할 게임 오브젝트 관리
     public GameObject tutorialWall1;
     public GameObject tutorialWall2;
 
@@ -85,11 +86,13 @@ public class GameManager : MonoBehaviour
     public void RetryFun()
     {
         SceneManager.LoadScene("GameScene");
+
     }
 
     public void MainMenuFun()
     {
         SceneManager.LoadScene("LevelScene");
+        GameManager.instance.throwChestNutNum = 0;
     }
 
 

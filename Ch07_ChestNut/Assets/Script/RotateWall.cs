@@ -19,14 +19,7 @@ public class RotateWall : MonoBehaviour
             Move();
         }
 
-        if (transform.position.x > 20f)
-        {
-            speed = 1.0f;
-        }
-        else if (transform.position.x > 40f)
-        {
-            speed = 50.0f;
-        }
+        
 
     }
 

@@ -6,15 +6,13 @@ public class LevelCameraMove : MonoBehaviour
 {
     bool isCameraMove = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
 
+        //점수가 3의 배수가 아닐경우 카메라이동 X
         if (GameManager.instance.score % 3 != 0)
         {
             isCameraMove = false;
@@ -34,7 +32,7 @@ public class LevelCameraMove : MonoBehaviour
 
 
 
-
+    //밤송이가 타켓에 충돌시 카메라 줌인 메서드
     IEnumerator HitCamMove(Vector3 temp)
     {
         GameManager.instance.isHit = false;
@@ -53,6 +51,7 @@ public class LevelCameraMove : MonoBehaviour
 
 
 
+    //레벨디자인용 카메라 위치 이동 메서드
     void CameraLevel()
     {
         if (GameManager.instance.score == 3 && !isCameraMove)

@@ -30,8 +30,8 @@ public class ChestNutGenerator : MonoBehaviour
 
     void Update()
     {
-        // 마우스 왼쪽 버튼 누르면 충전 시작 (게임이 활성화된 상태일 때만)
-        if (Input.GetMouseButtonDown(0) && GameManager.instance.isLive)
+        // 마우스 왼쪽 버튼 누르면 충전 시작 (쏠 환경이 충족됐을때 적용)
+        if (Input.GetMouseButtonDown(0) && GameManager.instance.isLive&& !GameManager.instance.isShoot)
         {
             isCharging = true;
             isPowerIncreasing = true; // 처음엔 증가 방향부터 시작
