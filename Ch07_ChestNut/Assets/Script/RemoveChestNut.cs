@@ -25,7 +25,7 @@ public class RemoveChestNut : MonoBehaviour
         if (collision.gameObject.tag == "MovingWall") //충돌한 오브젝트가 바닥일 경우
         {
             
-            Sc.enabled = false;
+            Sc.enabled = false; // 특정 컴포넌트를 비활성화
         }
     }
         
