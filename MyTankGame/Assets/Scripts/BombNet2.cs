@@ -13,16 +13,11 @@ public class BombNet2 : NetworkBehaviour
         Invoke("killBombRpc", 4.0f); // 4초 뒤에 killBombRpc() 호출해서 포탄을 파괴
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     [Rpc(SendTo.Owner)]
     void shotBombRpc()
     {
-        rb.AddForce(transform.up * GameManager.Instance.ForceBomb);
+        rb.AddForce(transform.up * GameManager.Instance.ForceYellowBomb);
     }
 
     [Rpc(SendTo.Server)] // Despawn()은 server RPC만 가능
@@ -42,7 +37,7 @@ public class BombNet2 : NetworkBehaviour
         }
         else if (tag == "Player") // 상대방 탱크에 충돌
         {
-            collision.gameObject.GetComponent<PlayerHealthNet>().decHealthRpc2();
+            collision.gameObject.GetComponent<PlayerHealthNet>().YdecHealthRpc();
             makeExplosionRpc();
             killBombRpc();
         }

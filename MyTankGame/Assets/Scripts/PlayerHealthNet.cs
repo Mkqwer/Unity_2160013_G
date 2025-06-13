@@ -57,7 +57,7 @@ public class PlayerHealthNet : NetworkBehaviour
         Debug.Log($"health = {health.Value}");
     }
 
-    public void decHealth2()
+    public void decHealthY()
     {
         int curValue = health.Value - 3;
         if (curValue < 0) curValue = 0;
@@ -71,9 +71,10 @@ public class PlayerHealthNet : NetworkBehaviour
         decHealth();
     }
 
-    public void decHealthRpc2() // 확실하게 RPC로 NetworkVariable 갱신
+    [Rpc(SendTo.Owner)]
+    public void YdecHealthRpc() // 확실하게 RPC로 NetworkVariable 갱신
     {
-        decHealth2();
+        decHealthY();
     }
 
     private void OnGUI() // GUI를 처리하는 이벤트 처리기

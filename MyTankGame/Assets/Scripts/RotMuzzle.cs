@@ -53,7 +53,7 @@ public class RotMuzzle : NetworkBehaviour
                 mBombRpc();
                 ExplosionRpc();
                 lastBombYellowTime = Time.time;
-                Debug.Log(" 발사 쿨타임");
+                Debug.Log("발사 쿨타임");
             }
             
         }
